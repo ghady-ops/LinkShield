@@ -1,5 +1,0 @@
-.env
-__pycache__/
-*.pyc
-*.db
-distilbert_phishing_final/
