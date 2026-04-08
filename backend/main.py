@@ -5,8 +5,16 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 import sqlite3, random, smtplib, os
 import bcrypt
+from fastapi.middleware.cors import CORSMiddleware
 from email.mime.text import MIMEText
 from datetime import datetime, timedelta
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # مؤقتًا خليها مفتوحة
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 app = FastAPI(title="LinkShield API")
 
 app.add_middleware(
