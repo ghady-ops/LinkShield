@@ -23,7 +23,9 @@ load_dotenv()
 
 GMAIL_USER     = os.getenv("EMAIL_USER")
 GMAIL_PASSWORD = os.getenv("EMAIL_PASS")
-MODEL_PATH     = os.getenv("MODEL_PATH", "FVJER/linkshield-model")
+MODEL_PATH = "distilbert_phishing_final"
+tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)
+model     = AutoModelForSequenceClassification.from_pretrained(MODEL_PATH)
 
 from huggingface_hub import login
 HF_TOKEN = os.getenv("HF_TOKEN")
