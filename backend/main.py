@@ -23,7 +23,8 @@ load_dotenv()
 
 GMAIL_USER     = os.getenv("EMAIL_USER")
 GMAIL_PASSWORD = os.getenv("EMAIL_PASS")
-MODEL_PATH = "distilbert_phishing_final"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "distilbert_phishing_final")
 tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)
 model     = AutoModelForSequenceClassification.from_pretrained(MODEL_PATH)
 
